@@ -2,8 +2,10 @@ const { v4: uuidv4 } = require('uuid');
 const blogService = require('../services/blogService');
 const blogController = {
     getAllBlogs: (req, res) => {
+        const { title } = req.query;
+        
         try {
-            const blogs = blogService.getAllBlogs();
+            const blogs = blogService.getAllBlogs({ title });
             res.send({
                 status: "success",
                 data: blogs

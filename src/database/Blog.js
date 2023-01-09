@@ -1,9 +1,15 @@
 const DB = require('./db');
 const saveToDatabase = require('./utils');
 
-const getAllBlogs = () => {
+const getAllBlogs = (filterParams) => {
     try {
-        return DB.blogs;
+        const blogs = DB.blogs;
+
+        if (filterParams.title) {
+            return blogs.filter((blog) => blog.title.toLowerCase().includes(filterParams.title.toLowerCase()));
+        }
+        
+        return blogs;
     } catch (error) {
         throw {
             status: 500,

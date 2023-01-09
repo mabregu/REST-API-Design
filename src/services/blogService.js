@@ -1,8 +1,8 @@
 const Blog = require('../database/Blog');
 const blogService = {
-    getAllBlogs: () => {
+    getAllBlogs: (filterParams) => {
         try {
-            const blogs = Blog.getAllBlogs();
+            const blogs = Blog.getAllBlogs(filterParams);
             return blogs;
         } catch (error) {
             throw error;
