@@ -2,15 +2,22 @@ const { v4: uuidv4 } = require('uuid');
 const blogService = require('../services/blogService');
 const blogController = {
     getAllBlogs: (req, res) => {
-        const blogs = blogService.getAllBlogs();
-        res.send({
-            status: "success",
-            data: blogs
-        });
+        try {
+            const blogs = blogService.getAllBlogs();
+            res.send({
+                status: "success",
+                data: blogs
+            });
+        } catch (error) {
+            res.status(500).send({
+                status: "error",
+                message: "Something went wrong"
+            });
+        }
     },
     getBlogById: (req, res) => {
         const { id } = req.params;
-        
+
         if (!id) {
             return res.status(400).send({
                 status: "error",
@@ -18,19 +25,26 @@ const blogController = {
             });
         }
         
-        const blog = blogService.getBlogById(id);
-        
-        if (!blog) {
-            return res.status(404).send({
+        try {
+            const blog = blogService.getBlogById(id);
+            
+            if (!blog) {
+                return res.status(404).send({
+                    status: "error",
+                    message: "Blog not found"
+                });
+            }
+            
+            res.send({
+                status: "success",
+                data: blog
+            });
+        } catch (error) {
+            res.status(500).send({
                 status: "error",
-                message: "Blog not found"
+                message: "Something went wrong"
             });
         }
-        
-        res.send({
-            status: "success",
-            data: blog
-        });
     },
     createBlog: (req, res) => {
         const { body } = req;
@@ -56,20 +70,81 @@ const blogController = {
             updatedAt: new Date()
         };
 
-        const newBlog = blogService.createBlog(blog);
-        
-        res.send({
-            status: "success",
-            data: newBlog
-        });
+        try {
+            const newBlog = blogService.createBlog(blog);
+            
+            res.send({
+                status: "success",
+                data: newBlog
+            });
+        } catch (error) {
+            res.status(500).send({
+                status: "error",
+                message: "Something went wrong"
+            });
+        }
     },
     updateBlog: (req, res) => {
-        const blog = blogService.updateBlog(req.params.id, req.body);
-        res.send(blog);
+        const { id } = req.params;
+        const { body } = req;
+        
+        if (!id) {
+            return res.status(400).send({
+                status: "error",
+                message: "Id is required"
+            });
+        }
+        
+        try {
+            const blog = blogService.updateBlog(id, body);
+            
+            if (!blog) {
+                return res.status(404).send({
+                    status: "error",
+                    message: "Blog not found"
+                });
+            }
+            
+            res.send({
+                status: "success",
+                data: blog
+            });
+        } catch (error) {
+            res.status(500).send({
+                status: "error",
+                message: "Something went wrong"
+            });
+        }
     },
     deleteBlog: (req, res) => {
-        const blog = blogService.deleteBlog(req.params.id);
-        res.send(blog);
+        const { id } = req.params;
+        
+        if (!id) {
+            return res.status(400).send({
+                status: "error",
+                message: "Id is required"
+            });
+        }
+        
+        try {
+            const blog = blogService.deleteBlog(id);
+            
+            if (!blog) {
+                return res.status(404).send({
+                    status: "error",
+                    message: "Blog not found"
+                });
+            }
+            
+            res.send({
+                status: "success",
+            });
+        } catch (error) {
+            res.status(500).send({
+                status: "error",
+                message: "Something went wrong"
+            });
+        }
     }
 };
 

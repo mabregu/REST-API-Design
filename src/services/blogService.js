@@ -1,21 +1,44 @@
 const Blog = require('../database/Blog');
 const blogService = {
     getAllBlogs: () => {
-        const blogs = Blog.getAllBlogs();
-        return blogs;
+        try {
+            const blogs = Blog.getAllBlogs();
+            return blogs;
+        } catch (error) {
+            throw error;
+        }
     },
     getBlogById: (id) => {
-        return;
+        try {
+            const blog = Blog.getBlogById(id);
+            return blog;
+        } catch (error) {
+            throw error;
+        }
     },
     createBlog: (blog) => {
-        const newBlog = Blog.createBlog(blog);
-        return newBlog;
+        try {
+            const newBlog = Blog.createBlog(blog);
+            return newBlog;
+        } catch (error) {
+            throw error;
+        }
     },
     updateBlog: (id, blog) => {
-        return;
+        try {
+            const updatedBlog = Blog.updateBlog(id, blog);
+            return updatedBlog;
+        } catch (error) {
+            throw error;
+        }
     },
     deleteBlog: (id) => {
-        return;
+        try {
+            const deletedBlog = Blog.deleteBlog(id);
+            return deletedBlog;
+        } catch (error) {
+            throw error;
+        }
     }
 };
 
