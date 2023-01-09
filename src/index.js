@@ -8,6 +8,7 @@ app.get('/', (req, res) => {
     res.send('It works!');
 });
 
+app.use(express.json());
 app.use('/api/v1/blogs', v1Blogs);
 
 app.listen(PORT, () => {
