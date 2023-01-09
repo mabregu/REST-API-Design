@@ -8,7 +8,8 @@ const blogService = {
         return;
     },
     createBlog: (blog) => {
-        return;
+        const newBlog = Blog.createBlog(blog);
+        return newBlog;
     },
     updateBlog: (id, blog) => {
         return;
