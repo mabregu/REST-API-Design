@@ -1,6 +1,8 @@
+const Blog = require('../database/Blog');
 const blogService = {
     getAllBlogs: () => {
-        return;
+        const blogs = Blog.getAllBlogs();
+        return blogs;
     },
     getBlogById: (id) => {
         return;

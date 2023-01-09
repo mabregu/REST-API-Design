@@ -1,0 +1,166 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Blog 1",
+            "content": "Content 1",
+            "author": "Author 1",
+            "date": "2023-01-01",
+            "comments": [
+                {
+                    "id": 1,
+                    "content": "Comment 1",
+                    "author": "Author 1",
+                    "date": "2023-01-02"
+                },
+                {
+                    "id": 2,
+                    "content": "Comment 2",
+                    "author": "Author 2",
+                    "date": "2023-01-02"
+                }
+            ],
+            "tags": [
+                {
+                    "id": 1,
+                    "name": "Tag 1"
+                },
+                {
+                    "id": 2,
+                    "name": "Tag 2"
+                }
+            ],
+            "categories": [
+                {
+                    "id": 1,
+                    "name": "Category 1"
+                },
+                {
+                    "id": 2,
+                    "name": "Category 2"
+                }
+            ],
+            "images": [
+                {
+                    "id": 1,
+                    "name": "Image 1"
+                },
+                {
+                    "id": 2,
+                    "name": "Image 2"
+                }
+            ],
+            "created_at": "2023-01-01",
+            "updated_at": "2023-01-01",
+            "deleted_at": null
+        },
+        {
+            "id": 2,
+            "title": "Blog 2",
+            "content": "Content 2",
+            "author": "Author 2",
+            "date": "2023-01-02",
+            "comments": [
+                {
+                    "id": 3,
+                    "content": "Comment 3",
+                    "author": "Author 3",
+                    "date": "2023-01-03"
+                },
+                {
+                    "id": 4,
+                    "content": "Comment 4",
+                    "author": "Author 4",
+                    "date": "2023-01-03"
+                }
+            ],
+            "tags": [
+                {
+                    "id": 3,
+                    "name": "Tag 3"
+                },
+                {
+                    "id": 4,
+                    "name": "Tag 4"
+                }
+            ],
+            "categories": [
+                {
+                    "id": 3,
+                    "name": "Category 3"
+                },
+                {
+                    "id": 4,
+                    "name": "Category 4"
+                }
+            ],
+            "images": [
+                {
+                    "id": 3,
+                    "name": "Image 3"
+                },
+                {
+                    "id": 4,
+                    "name": "Image 4"
+                }
+            ],
+            "created_at": "2023-01-02",
+            "updated_at": "2023-01-02",
+            "deleted_at": null
+        },
+        {
+            "id": 3,
+            "title": "Blog 3",
+            "content": "Content 3",
+            "author": "Author 3",
+            "date": "2023-01-03",
+            "comments": [
+                {
+                    "id": 5,
+                    "content": "Comment 5",
+                    "author": "Author 5",
+                    "date": "2023-01-04"
+                },
+                {
+                    "id": 6,
+                    "content": "Comment 6",
+                    "author": "Author 6",
+                    "date": "2023-01-04"
+                }
+            ],
+            "tags": [
+                {
+                    "id": 5,
+                    "name": "Tag 5"
+                },
+                {
+                    "id": 6,
+                    "name": "Tag 6"
+                }
+            ],
+            "categories": [
+                {
+                    "id": 5,
+                    "name": "Category 5"
+                },
+                {
+                    "id": 6,
+                    "name": "Category 6"
+                }
+            ],
+            "images": [
+                {
+                    "id": 5,
+                    "name": "Image 5"
+                },
+                {
+                    "id": 6,
+                    "name": "Image 6"
+                }
+            ],
+            "created_at": "2023-01-03",
+            "updated_at": "2023-01-03",
+            "deleted_at": null
+        }
+    ]
+}

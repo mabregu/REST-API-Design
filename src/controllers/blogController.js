@@ -2,7 +2,10 @@ const blogService = require('../services/blogService');
 const blogController = {
     getAllBlogs: (req, res) => {
         const blogs = blogService.getAllBlogs();
-        res.send(blogs);
+        res.send({
+            status: "success",
+            data: blogs
+        });
     },
     getBlogById: (req, res) => {
         const blog = blogService.getBlogById(req.params.id);
