@@ -1,18 +1,24 @@
+const blogService = require('../services/blogService');
 const blogController = {
     getAllBlogs: (req, res) => {
-        res.send('Get all blogs');
+        const blogs = blogService.getAllBlogs();
+        res.send(blogs);
     },
     getBlogById: (req, res) => {
-        res.send(`Get blog with id ${req.params.id}`);
+        const blog = blogService.getBlogById(req.params.id);
+        res.send(blog);
     },
     createBlog: (req, res) => {
-        res.send('Create a new blog');
+        const blog = blogService.createBlog(req.body);
+        res.send(blog);
     },
     updateBlog: (req, res) => {
-        res.send(`Update blog with id ${req.params.id}`);
+        const blog = blogService.updateBlog(req.params.id, req.body);
+        res.send(blog);
     },
     deleteBlog: (req, res) => {
-        res.send(`Delete blog with id ${req.params.id}`);
+        const blog = blogService.deleteBlog(req.params.id);
+        res.send(blog);
     }
 };
 
